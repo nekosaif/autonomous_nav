@@ -1,0 +1,11 @@
+<launch>
+    <node pkg="usb_cam" type="usb_cam_node" name="camera">
+        <param name="video_device" value="/dev/video0"/>
+        <param name="image_width" value="640"/>
+        <param name="image_height" value="480"/>
+    </node>
+    
+    <node pkg="autonomous_nav" type="yolo_detection_node.py" name="yolo_detector">
+        <param name="model_path" value="$(find autonomous_nav)/models/yolov8n.pt"/>
+    </node>
+</launch>

@@ -1,0 +1,22 @@
+# Object detection parameters
+yolo:
+  model_path: "$(find autonomous_nav)/models/yolov8n.pt"
+  confidence_threshold: 0.6
+  iou_threshold: 0.4
+  target_classes: ["person", "bicycle", "car", "motorbike", "aeroplane", "bus", "train", "truck", "boat"]
+  input_size: 640
+  max_detections: 10
+
+# Camera parameters
+camera:
+  frame_width: 640
+  frame_height: 480
+  fps: 30
+  topic_name: "/camera/image_raw"
+
+# Navigation parameters
+navigation:
+  safe_distance: 0.5    # meters
+  linear_speed: 0.2     # m/s
+  angular_speed: 0.5    # rad/s
+  proximity_threshold: 0.3  # 30% of frame height

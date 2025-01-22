@@ -1,0 +1,8 @@
+<launch>
+    <include file="$(find turtlebot3_navigation)/launch/turtlebot3_navigation.launch">
+        <arg name="map_file" value="$(find autonomous_nav)/maps/map.yaml"/>
+    </include>
+    
+    <node pkg="autonomous_nav" type="obstacle_avoidance_node.py" name="obstacle_avoidance"/>
+    <node pkg="autonomous_nav" type="navigation_manager.py" name="navigation_manager"/>
+</launch>
